@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ege Çınar</title>
+  <style>
+    body {
+      margin: 0;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      /* Arka plan gradient */
+      background: linear-gradient(to right, #9b5cac, #fad0c4);
+    }
+    .slideshow {
+      position: relative;
+      max-width: 80%;   /* biraz küçültmek için */
+      margin: auto;
+      height: 70vh;     /* ekranın %70 yüksekliği */
+      overflow: hidden;
+    }
+    .slideshow img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* fotoğrafı orantılı şekilde sığdırır */
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .slideshow img.active {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎂 Doğum Günün Kutlu Olsun... 🎂</h1>
+  <div class="slideshow">
+    <img src="goko1.jpg.jpeg" class="active" alt="">
+    <img src="goko2.jpg.jpeg" alt="">
+    <img src="goko3.jpg.jpeg" alt="">
+    <img src="goko4.jpeg" alt="">
+    <img src="goko5.jpeg" alt="">
+    <img src="goko6.jpeg" alt="">
+    <img src="goko7.jpeg" alt="">
+    <img src="goko8.jpeg" alt="">
+    <img src="goko9.jpeg" alt="">
+    <img src="goko10.jpeg" alt="">
+    <img src="gkoo11.jpeg" alt="">
+    <img src="gko12.jpeg" alt="">
+    <img src="goko13.jpeg" alt="">
+    <img src="goko14.jpeg" alt="">
+    <img src="gkoo15.jpeg" alt="">
+  </div>
+
+  <script>
+    let slides = document.querySelectorAll('.slideshow img');
+    let current = 0;
+
+    function showNextSlide() {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }
+
+    setInterval(showNextSlide, 3000); // 3 saniyede bir değişir
+  </script>
+</body>
+</html>
